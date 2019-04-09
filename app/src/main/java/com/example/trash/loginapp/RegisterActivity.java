@@ -43,18 +43,20 @@ public class RegisterActivity extends AppCompatActivity {
         pwID = (EditText) findViewById(R.id.pwID);
         pwCopyID = (EditText) findViewById(R.id.pwCopyID);
 
-        Name = nameID.getText().toString();
-        Surname = surnameID.getText().toString();
-        Username = userNameID.getText().toString();
-        Password = pwID.getText().toString();
-        PwCopy = pwCopyID.getText().toString();
-
         View.OnClickListener cL1 = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (v.getId() == R.id.regButton) {
                     if (nameID.getText().length() > 0 && surnameID.getText().length() > 0 && userNameID.getText().length() > 0 && pwID.getText().length() > 0 && pwCopyID.getText().length() > 0) {
+
+                        Name = nameID.getText().toString();
+                        Surname = surnameID.getText().toString();
+                        Username = userNameID.getText().toString();
+                        Password = pwID.getText().toString();
+                        PwCopy = pwCopyID.getText().toString();
+
                         saveData();
+
                         regText.setTextColor(getResources().getColor(R.color.colorGreen));
                         regText.setText(getString(R.string.successReg));
                     } else if (nameID.getText().length() == 0 && surnameID.getText().length() == 0 && userNameID.getText().length() == 0 && pwID.getText().length() == 0 && pwCopyID.getText().length() == 0) {
